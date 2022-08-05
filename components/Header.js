@@ -58,7 +58,7 @@ const Header = () => {
       {/* authentification */}
       <div className="space-x-2 hidden md:inline-block">
         <button className="font-bold">SignIn</button>
-        <button className="text-white font-bold transition duration-500 ease hover:bg-slate-800 inline-block bg-slate-900 px-4 py-2 rounded-md">
+        <button className="text-white font-bold transition duration-500 ease inline-block hover:bg-slate-800 bg-slate-900 px-4 py-2 rounded-md">
           SignUp
         </button>
       </div>
