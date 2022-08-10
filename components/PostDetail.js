@@ -4,7 +4,6 @@ import moment from "moment";
 import Link from "next/link";
 const readingTime = require("reading-time");
 import { RichText } from "@graphcms/rich-text-react-renderer";
-import CodeBlock from "react-copy-code";
 
 const PostDetail = ({ post }) => {
   const [copied, setCopied] = useState(false);

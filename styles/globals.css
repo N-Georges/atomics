@@ -30,3 +30,64 @@ pre code {
   letter-spacing: normal;
   word-break: break-all;
 }
+
+/* vertical scrolbar */
+.vertical-scroll::-webkit-scrollbar {
+  width: 2em;
+  height: 0.6em;
+  cursor: pointer;
+}
+
+.vertical-scroll::-webkit-scrollbar-track {
+  background: rgb(210, 214, 210);
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+.vertical-scroll::-webkit-scrollbar-thumb {
+  background: rgb(145, 146, 145);
+  border-radius: 100vw;
+}
+
+.vertical-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgb(114, 116, 114);
+}
+/* horizontal scroolbar */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 0.5em;
+  width: 0.6em;
+  cursor: pointer;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: rgb(210, 214, 210);
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgb(145, 146, 145);
+  border-radius: 100vw;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgb(114, 116, 114);
+}
+
+/* scroolbar */
+::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(210, 214, 210, 0.506);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(145, 146, 145);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(114, 116, 114);
+}

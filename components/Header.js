@@ -3,10 +3,12 @@ import Sidebar from "./Sidebar";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import { getCategories } from "../lib/hygraph";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
+  const router = useRouter();
+  const currentRoute = router.pathname;
   useEffect(() => {
     getCategories().then((newCategories) => setCategories(newCategories));
   }, []);
@@ -16,23 +18,40 @@ const Header = () => {
       <Link href="/">
         <a className="font-bold text-3xl">Atomics</a>
       </Link>
-      <ul className="justify-center items-center divide-x divide-gray-300 px-5 flex-1 hidden md:flex">
-        <li className="px-2 cursor-pointer group transition duration-300 font-semibold text-lg bg-gray-200 rounded-md mx-1">
-          Home
-          <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-300"></span>
-        </li>
-        <li className="px-2 cursor-pointer group transition duration-300 font-semibold text-lg">
-          Ressource
-          <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-300"></span>
-        </li>
-        <li className="px-2 cursor-pointer group transition duration-300 font-semibold text-lg">
-          Article
-          <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-300"></span>
-        </li>
-        <li className="px-2 cursor-pointer group transition duration-300 font-semibold text-lg">
-          Categories
-          <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-300"></span>
-        </li>
+      <ul className="justify-center items-center px-5 flex-1 hidden md:flex">
+        <Link href="/" className="cursor-pointer">
+          <a
+            className={`group transition font-semibold text-lg ${
+              currentRoute === "/"
+                ? "bg-gray-200 rounded-md mx-1 px-2 py-1"
+                : "px-2"
+            }`}
+          >
+            Home
+          </a>
+        </Link>
+        <Link href="/ressource" className="cursor-pointer">
+          <a
+            className={`group transition font-semibold text-lg ${
+              currentRoute === "/ressource"
+                ? "bg-gray-200 rounded-md mx-1 px-2 py-1"
+                : "px-2"
+            }`}
+          >
+            Ressource
+          </a>
+        </Link>
+        <Link href="/category" className="cursor-pointer">
+          <a
+            className={`group transition font-semibold text-lg ${
+              currentRoute === "/category"
+                ? "bg-gray-200 rounded-md mx-1 px-2 py-1"
+                : "px-2"
+            }`}
+          >
+            Categories
+          </a>
+        </Link>
       </ul>
 
       <button
