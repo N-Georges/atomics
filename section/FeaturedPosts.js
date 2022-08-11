@@ -39,16 +39,16 @@ const FeaturedPosts = () => {
     <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-10 w-10 text-blue-500"
+        className="h-8 w-8"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={2}
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
+          strokeWidth="2"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
         />
       </svg>
     </div>
@@ -58,23 +58,23 @@ const FeaturedPosts = () => {
     <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-10 w-10 text-blue-500"
+        className="h-8 w-8"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={2}
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+          strokeWidth="2"
+          d="M14 5l7 7m0 0l-7 7m7-7H3"
         />
       </svg>
     </div>
   );
 
   return (
-    <div className="mb-8 px-2">
+    <div className="mb-8 px-10">
       <Carousel
         infinite
         customLeftArrow={customLeftArrow}

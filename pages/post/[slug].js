@@ -8,6 +8,7 @@ import PostDetail from "../../components/PostDetail";
 import PostWidget from "../../components/PostWidget";
 import { getPosts, getPostDetails } from "../../lib/hygraph";
 import Loader from "../../components/Loader";
+import AdjacentPosts from "../../section/AdjacentPosts";
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -26,11 +27,14 @@ const Post = ({ post }) => {
         </div>
         <div className="md:col-span-4 col-span-1 p-5 h-screen">
           <div className="md:sticky relative top-8 h-screen">
+          <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
             <PostWidget
               slug={post.slug}
               categories={post.categories.map((category) => category.slug)}
             />
-            <Categories />
+            <div className="hidden md:inline">
+              <Categories />
+            </div>
           </div>
         </div>
       </div>
