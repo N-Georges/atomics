@@ -36,7 +36,7 @@ const FeaturedPostCard = ({ post }) => (
           </p>
         </div>
       </div>
-      <Link href={`/post/${post.slug}`}>
+      <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
         <span className="cursor-pointer absolute w-full h-full" />
       </Link>
     </div>

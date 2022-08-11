@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 import Link from "next/link";
 
 const AdjacentPostCard = ({ post, position }) => (
@@ -8,7 +7,7 @@ const AdjacentPostCard = ({ post, position }) => (
       <div className="flex-col">
         <div className="text-center text-sm text-gray-200">previous post</div>
         <div className="flex justify-start items-center">
-          <Link className="" href={`/post/${post.slug}`}>
+          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8 cursor-pointer"
@@ -24,7 +23,7 @@ const AdjacentPostCard = ({ post, position }) => (
               />
             </svg>
           </Link>
-          <Link className="absolute" href={`/post/${post.slug}`}>
+          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
             <a className="text-gray-500 w-20 sm:w-32 md:w-20 lg:w-32 truncate text-left">
               {post.title}
             </a>

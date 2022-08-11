@@ -110,7 +110,7 @@ const PostCard = ({ post }) => {
       </div>
       <div className="sm:flex relative sm:space-x-5 py-5 ">
         <div className="hidden sm:inline-block">
-          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`} passHref>
             <a>
               <Image
                 src={post.coverImage.url}
@@ -127,17 +127,19 @@ const PostCard = ({ post }) => {
           </Link>
         </div>
         <div className="h-40 w-full relative mb-3 sm:hidden">
-          <Image
-            src={post.coverImage.url}
-            alt={post.title}
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-            className="rounded-md"
-          />
+          <Link as={`/post/${post.slug}`}  href={`/post/${post.slug}`} passHref>
+            <Image
+              src={post.coverImage.url}
+              alt={post.title}
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+              className="rounded-md cursor-pointer"
+            />
+          </Link>
         </div>
         <div>
-          <Link href={`/post/${post.slug}`}>
+          <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`} passHref>
             <a className="font-bold tracking-wide cursor-pointer hover:underline">
               {post.title}
             </a>

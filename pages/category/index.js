@@ -8,7 +8,9 @@ const category = ({ posts }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12">
       <div className="md:col-span-8 divide-y col-span-1 px-10 my-5 min-h-screen border-b space-y-5 md:border-b-0 md:border-r">
-        <FilterCategories />
+      <div className="md:hidden">
+        <FilterCategories posts={posts} />
+      </div>
         {posts.map((post, index) => (
           <PostCard key={index} post={post.node} />
         ))}

@@ -28,7 +28,7 @@ const PostWidget = ({ categories, slug }) => {
             className="flex items-center space-x-3 w-full "
           >
             <div className="flex-none hidden lg:inline-block">
-              <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
+              <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`} passHref>
                 <Image
                   src={post.coverImage.url}
                   alt={post.title}
@@ -50,7 +50,7 @@ const PostWidget = ({ categories, slug }) => {
                   {moment(post.createdAt).format("DD MMM, YYYY")}
                 </time>
               </p>
-              <Link href={`/post/${post.slug}`}>
+              <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`} passHref>
                 <a className="text-xs lg:text-sm hover:underline">
                   {post.title}
                 </a>
