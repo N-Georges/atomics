@@ -17,7 +17,7 @@ const Sidebar = ({ children, isOpen, setIsOpen }) => {
         }
       >
         <div className="relative w-screen max-w-sm pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
-          <header className="px-6 py-5 font-bold text-lg flex-1">
+          <header className="px-6 py-5 font-bold text-lg">
             <div className="flex-1 text-end">
               <button
                 aria-label="menu-sidebar"
@@ -43,7 +43,7 @@ const Sidebar = ({ children, isOpen, setIsOpen }) => {
               </button>
             </div>
           </header>
-          {children}
+          <div className="flex-1 px-5 space-y-2">{children}</div>
         </div>
       </div>
       <div
