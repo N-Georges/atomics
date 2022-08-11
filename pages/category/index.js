@@ -1,8 +1,8 @@
 import React from "react";
-import { getCategories, getCategoryPost, getPosts } from "../lib/hygraph";
-import PostCard from "../components/PostCard";
-import Categories from "../components/Categories";
-import FilterCategories from "../components/FilterCategories";
+import { getCategories, getCategoryPost, getPosts } from "../../lib/hygraph";
+import PostCard from "../../components/PostCard";
+import Categories from "../../components/Categories";
+import FilterCategories from "../../components/FilterCategories";
 
 const category = ({ posts }) => {
   return (

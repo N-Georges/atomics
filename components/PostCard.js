@@ -14,7 +14,6 @@ const PostCard = ({ post }) => {
       }, 2000);
     }
   }, [post]);
-  console.log(post.categories[0].name);
   return (
     // <>
     //   {loading ? (

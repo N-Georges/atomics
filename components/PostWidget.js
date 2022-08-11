@@ -25,7 +25,7 @@ const PostWidget = ({ categories, slug }) => {
         {relatedPosts.map((post) => (
           <div
             key={post.title}
-            className="flex items-center space-x-3 p-2 w-full "
+            className="flex items-center space-x-3 w-full "
           >
             <div className="flex-none hidden lg:inline-block">
               <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
