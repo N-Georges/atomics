@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import { getCategories } from "../lib/hygraph";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useSession, signIn, signOut } from "next-auth/react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -13,11 +11,7 @@ const Header = () => {
   useEffect(() => {
     getCategories().then((newCategories) => setCategories(newCategories));
   }, []);
-  const { data: session, status } = useSession();
 
-  const loading = status === "loading";
-
-  if (loading) return null;
   return (
     <>
       <nav className=" w-full hidden md:inline-flex items-center justify-between px-10 h-20 bg-white text-gray-700 border-b border-gray-200 z-10">

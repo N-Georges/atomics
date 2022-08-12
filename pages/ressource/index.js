@@ -6,7 +6,6 @@ import { getRessourcePosts } from "../../lib/hygraph";
 import FilterCategories from "../../components/FilterCategories";
 import { useEffect, useState } from "react";
 import LoadMoreButton from "../../components/LoadMoreButton";
-import FeaturedPosts from "../../section/FeaturedPosts";
 
 export default function Home({ posts }) {
   const data = posts;
