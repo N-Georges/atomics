@@ -5,7 +5,7 @@ const AdjacentPostCard = ({ post, position }) => (
   <>
     {position === "LEFT" && (
       <div className="flex-col">
-        <div className="text-center text-sm text-gray-200">previous post</div>
+        <div className="text-start ml-1 text-sm text-gray-200">previous post</div>
         <div className="flex justify-start items-center">
           <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
             <svg
@@ -24,7 +24,7 @@ const AdjacentPostCard = ({ post, position }) => (
             </svg>
           </Link>
           <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`}>
-            <a className="text-gray-500 w-20 sm:w-32 md:w-20 lg:w-32 truncate text-left">
+            <a className="text-gray-500 w-20 sm:w-32 md:w-20 lg:w-28 truncate text-left">
               {post.title}
             </a>
           </Link>
@@ -33,11 +33,11 @@ const AdjacentPostCard = ({ post, position }) => (
     )}
     {position === "RIGHT" && (
       <div className="flex-col">
-        <div className="text-center text-sm text-gray-200">next post</div>
+        <div className="text-end mr-1 text-sm text-gray-200">next post</div>
 
         <div className="flex justify-end items-center">
           <Link className="" href={`/post/${post.slug}`}>
-            <a className="text-gray-400 w-20 sm:w-32 md:w-20 lg:w-32 text-right truncate">
+            <a className="text-gray-400 w-20 sm:w-32 md:w-20 lg:w-28 text-right truncate">
               {post.title}
             </a>
           </Link>
