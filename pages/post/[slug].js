@@ -56,7 +56,11 @@ const Post = ({ post, seo }) => {
       <div className="mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12">
           <div className="md:col-span-8 col-span-1 px-10 my-5 min-h-screen border-b space-y-5 md:border-b-0 md:border-r">
-            <PostDetail post={post} />
+            <PostDetail
+              post={post}
+              url={`${seo[0].seo.url}/post/${post.slug}`}
+              source={seo[0].seo.url}
+            />
             <Author author={post.author} />
             <CommentsForm slug={post.slug} />
             <Comments slug={post.slug} />
