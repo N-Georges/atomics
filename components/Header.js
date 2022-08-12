@@ -25,7 +25,7 @@ const Header = () => {
         <Link href="/">
           <a className="font-bold text-3xl">Atomics</a>
         </Link>
-        <ul className="justify-start items-center px-5 flex-1 hidden md:flex">
+        <ul className="justify-end items-center px-5 flex-1 hidden md:flex">
           <Link href="/" className="cursor-pointer">
             <a
               className={`group transition font-semibold text-lg ${
@@ -60,7 +60,6 @@ const Header = () => {
             </a>
           </Link>
         </ul>
-
         <button
           aria-label="menu-navbar"
           className="md:hidden"
@@ -81,82 +80,6 @@ const Header = () => {
             />
           </svg>
         </button>
-        {/* authentification */}
-        <div className="space-x-2 hidden md:inline-block">
-          {session ? (
-            <p>
-              <span>Signed in as {session?.user?.email}</span>
-              <button onClick={signOut}>Sign out</button>
-            </p>
-          ) : (
-            <>
-              <button onClick={signIn}>Sign in</button>
-            </>
-          )}
-          {/* <button className="text-white font-bold transition duration-500 ease inline-block hover:bg-slate-800 bg-slate-900 px-4 py-2 rounded-md">SignIn</button>
-    <button className="text-white font-bold transition duration-500 ease inline-block hover:bg-slate-800 bg-slate-900 px-4 py-2 rounded-md">
-      SignUp
-    </button> */}
-        </div>
-        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}>
-          <Link href="/">
-            <a className="font-semibold text-xl flex items-center space-x-2 bg-gray-200 p-2 rounded-lg cursor-pointer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-              <span>Home</span>
-            </a>
-          </Link>
-          <Link href="/ressource">
-            <a className="font-semibold text-xl flex items-center space-x-2 bg-gray-200 p-2 rounded-lg cursor-pointer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-              <span>Ressource</span>
-            </a>
-          </Link>
-          <Link href="/category">
-            <a className="font-semibold text-xl flex items-center space-x-2 bg-gray-200 p-2 rounded-lg cursor-pointer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-              <span>Categories</span>
-            </a>
-          </Link>
-        </Sidebar>
         {/* nav mobile bottom */}
       </nav>
       <div className="bg-white md:hidden w-full h-16 px-6 py-2 flex justify-between text-gray-font fixed bottom-0 shadow-lg z-40 border-t border-gray-99">

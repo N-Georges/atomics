@@ -23,12 +23,13 @@ const PostWidget = ({ categories, slug }) => {
       </h3>
       <div className="space-y-3 flex-col horizontal-scroll overflow-y-scroll h-44">
         {relatedPosts.map((post) => (
-          <div
-            key={post.title}
-            className="flex items-center space-x-3 w-full "
-          >
-            <div className="flex-none hidden lg:inline-block">
-              <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`} passHref>
+          <div key={post.title} className="flex space-x-3 w-full ">
+            <div className="flex-none">
+              <Link
+                as={`/post/${post.slug}`}
+                href={`/post/${post.slug}`}
+                passHref
+              >
                 <Image
                   src={post.coverImage.url}
                   alt={post.title}
@@ -50,11 +51,18 @@ const PostWidget = ({ categories, slug }) => {
                   {moment(post.createdAt).format("DD MMM, YYYY")}
                 </time>
               </p>
-              <Link as={`/post/${post.slug}`} href={`/post/${post.slug}`} passHref>
-                <a className="text-xs lg:text-sm hover:underline">
-                  {post.title}
-                </a>
-              </Link>
+              <div className="w-48 truncate">
+                <Link
+                  as={`/post/${post.slug}`}
+                  href={`/post/${post.slug}`}
+                  passHref
+                  
+                >
+                  <a className="text-xs lg:text-sm hover:underline">
+                    {post.title}
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         ))}

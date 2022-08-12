@@ -27,7 +27,7 @@ const Post = ({ post }) => {
         </div>
         <div className="md:col-span-4 col-span-1 p-5 h-screen">
           <div className="md:sticky relative top-8 h-screen">
-          <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
+            <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
             <PostWidget
               slug={post.slug}
               categories={post.categories.map((category) => category.slug)}

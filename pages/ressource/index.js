@@ -54,10 +54,10 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid grid-cols-1 md:grid-cols-12">
-        <div className="md:hidden md:col-span-8 ml-10">
-          <FilterCategories posts={posts} />
-        </div>
         <div className="md:col-span-8 divide-y col-span-1 px-10 my-5 min-h-screen border-b border-t-0 space-y-5 md:border-b-0 md:border-r">
+          <div className="md:hidden">
+            <FilterCategories posts={posts} />
+          </div>
           {list.map((post, index) => (
             <PostCard key={index} post={post} />
           ))}
