@@ -28,7 +28,6 @@ const PostWidget = ({ categories, slug }) => {
               <Link
                 as={`/post/${post.slug}`}
                 href={`/post/${post.slug}`}
-                passHref
               >
                 <Image
                   src={post.coverImage.url}

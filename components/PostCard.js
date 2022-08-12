@@ -151,8 +151,11 @@ const PostCard = ({ post }) => {
           </div>
           <p className="text-gray-500 max-w-md">{post.excerpt}</p>
         </div>
-        <Link as={`/post/${post.slug}/#comment`} href={`/post/${post.slug}/#comment`} passHref>
-          <div className="flex md:justify-end items-end mt-2 md:mt-0 cursor-pointer">
+        <Link
+          as={`/post/${post.slug}/#comment`}
+          href={`/post/${post.slug}/#comment`}
+        >
+          <a className="flex md:justify-end items-end mt-2 md:mt-0 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-gray-500"
@@ -168,7 +171,7 @@ const PostCard = ({ post }) => {
               />
             </svg>
             <span className="font-semibold">{post.comments.length}</span>
-          </div>
+          </a>
         </Link>
       </div>
     </div>
