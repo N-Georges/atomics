@@ -2,16 +2,15 @@ import Head from "next/head";
 import Categories from "../components/Categories";
 import PostWidget from "../components/PostWidget";
 import PostCard from "../components/PostCard";
-import { getPosts } from "../lib/hygraph";
+import { getPosts, getSeoPosts } from "../lib/hygraph";
 import FilterCategories from "../components/FilterCategories";
 import { useEffect, useState } from "react";
 import LoadMoreButton from "../components/LoadMoreButton";
 import FeaturedPosts from "../section/FeaturedPosts";
 import { NextSeo } from "next-seo";
 
-export default function Home({ posts }) {
+export default function Home({ posts, seo }) {
   const data = posts;
-
   // Array of all news articles
   const allNews = data;
 
@@ -51,32 +50,32 @@ export default function Home({ posts }) {
   return (
     <div>
       <NextSeo
-        title="Atomics - Blog"
-        description="Atomics partage des articles autour de la tech."
-        canonical="https://atomics.vercel.app/"
+        title={seo[0].seo.title}
+        description={seo[0].seo.description}
+        canonical={seo[0].seo.url}
         openGraph={{
-          url: "https://atomics.vercel.app/",
-          title: "Open Graph Title",
-          description: "Open Graph Description",
+          url: `${seo[0].seo.url}`,
+          title: `${seo[0].seo.title}`,
+          description: `${seo[0].seo.description}`,
           images: [
             {
-              url: "https://www.example.ie/og-image-01.jpg",
+              url: `${seo[0].seo.image.url}`,
               width: 800,
               height: 600,
-              alt: "Og Image Alt",
+              alt: `${seo[0].seo.title}`,
               type: "image/jpeg",
             },
             {
-              url: "https://www.example.ie/og-image-02.jpg",
+              url: `${seo[0].seo.image.url}`,
               width: 900,
               height: 800,
-              alt: "Og Image Alt Second",
+              alt: `${seo[0].seo.title}`,
               type: "image/jpeg",
             },
-            { url: "https://www.example.ie/og-image-03.jpg" },
-            { url: "https://www.example.ie/og-image-04.jpg" },
+            { url: `${seo[0].seo.image.url}` },
+            { url: `${seo[0].seo.image.url}` },
           ],
-          site_name: "Atomics",
+          site_name: `${seo[0].seo.title}`,
         }}
         twitter={{
           handle: "@handle",
@@ -116,10 +115,12 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
+  const seo = (await getSeoPosts());
 
   return {
     props: {
       posts,
+      seo,
     },
   };
 }
