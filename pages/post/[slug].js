@@ -48,8 +48,8 @@ const Post = ({ post, seo }) => {
           site_name: "Atomics",
         }}
         twitter={{
-          handle: "@handle",
-          site: "@site",
+          handle: "@georges26670844",
+          site: "@georges26670844",
           cardType: "summary_large_image",
         }}
       />
