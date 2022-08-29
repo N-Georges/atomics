@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import Image from "next/image";
 import moment from "moment";
@@ -28,7 +29,7 @@ const PostDetail = ({ post, url, source }) => {
       setCopied(false);
     }, 2000);
   }
-  console.log(post.categories[0].name);
+  console.log(post);
   return (
     <div>
       {/* header Post */}
@@ -162,6 +163,32 @@ const PostDetail = ({ post, url, source }) => {
               </blockquote>
             ),
             p: ({ children }) => <p className="mb-8">{children}</p>,
+            Asset: {
+              image: ({ children }) => (
+                <div className="h-72 w-full relative mb-8">
+                  <Image
+                    src={children.src}
+                    alt={children.title}
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                    className="rounded-md"
+                  />
+                </div>
+              ),
+            },
+            // img: ({ children }) => (
+            //   <div className="h-72 w-full relative mb-8">
+            //     <Image
+            //       src={children.src}
+            //       alt="image"
+            //       layout="fill"
+            //       objectFit="cover"
+            //       priority={true}
+            //       className="rounded-md"
+            //     />
+            //   </div>
+            // ),
             bold: ({ children }) => <strong>{children}</strong>,
             a: ({ children, openInNewTab, href, rel, ...rest }) => {
               if (href.match(/^https?:\/\/|^\/\//i)) {
